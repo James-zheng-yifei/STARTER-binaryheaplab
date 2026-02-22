@@ -1,5 +1,5 @@
 // heap.cpp
-// Diba Mirza
+// Yifei Zheng
 
 #include "heap.h"
 #include <iostream>
@@ -41,9 +41,9 @@ void Heap::push(int value){
   vdata.push_back(value);
   int i = vdata.size()-1;
   int parent;
-  while(i > 1) {
-    parent = i/2-1;
-    if(value < vdata[parent]) {
+  while(i > 0) {
+    parent = (i-1)/2;
+    if(vdata[i] < vdata[parent]) {
       std::swap(vdata[i], vdata[parent]);
       i = parent;
     }
@@ -74,6 +74,7 @@ int Heap::top(){
 
 // Returns true if the heap is empty, false otherwise
 bool Heap::empty(){
+  if(vdata.empty()) throw std::runtime_error("empty heap");
   return vdata.empty();
 }
     
