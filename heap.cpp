@@ -7,6 +7,10 @@ using std::cout;
 
 // Builds a heap from the range [start, end) using the heapify algorithm
 // Should run in O(n) time
+
+Heap::Heap() {
+}
+
 Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
   vdata.assign(start, end);
   int n = vdata.size();
@@ -74,7 +78,6 @@ int Heap::top(){
 
 // Returns true if the heap is empty, false otherwise
 bool Heap::empty(){
-  if(vdata.empty()) throw std::runtime_error("empty heap");
   return vdata.empty();
 }
     
