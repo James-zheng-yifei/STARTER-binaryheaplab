@@ -17,10 +17,10 @@ class Heap{
     void pop(); // delete the min element
     int top();
     bool empty();
-    void heapify(int value);
 
  private:
     std::vector<int> vdata; //store the binary heap tree as a dynamic array
+    void heapify(int value);
 };
 
 #endif
