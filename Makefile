@@ -1,14 +1,16 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
 
+all: examheap
+
 examheap: examheap.o heap.o
-	$(CXX) $(CXXFLAGS) examheap.o heap.o -o examheap
+	g++ -std=c++17 -Wall -Wextra examheap.o heap.o -o examheap
 
 examheap.o: examheap.cpp heap.h
-	$(CXX) $(CXXFLAGS) -c examheap.cpp
+	g++ -std=c++17 -Wall -Wextra -c examheap.cpp
 
 heap.o: heap.cpp heap.h
-	$(CXX) $(CXXFLAGS) -c heap.cpp
+	g++ -std=c++17 -Wall -Wextra -c heap.cpp
 
 clean:
 	rm -f *.o examheap
